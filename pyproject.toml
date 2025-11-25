@@ -1,0 +1,7 @@
+[project]
+name = "blackjack"
+version = "0.1.0"
+description = "Blackjack web game - standalone HTML application"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
