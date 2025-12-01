@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - AI, IGNIS, Kosmos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen active">
+            <h1>🚀 Quiz Wiedzy</h1>
+            <p>Sprawdź swoją wiedzę na temat AI, misji IGNIS i kosmosu!</p>
+            <p class="info">5 pytań o różnym stopniu trudności</p>
+            <button id="start-btn" class="btn btn-primary">Rozpocznij Quiz</button>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="quiz-info">
+                    <span id="question-number">Pytanie 1/5</span>
+                    <span id="category-badge" class="badge">Kategoria</span>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <h2 id="question-text">Treść pytania...</h2>
+                <div id="answers-container" class="answers">
+                    <!-- Odpowiedzi będą generowane dynamicznie -->
+                </div>
+            </div>
+
+            <div class="quiz-footer">
+                <button id="next-btn" class="btn btn-primary" disabled>Następne pytanie</button>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <div class="result-content">
+                <h1>🎉 Quiz ukończony!</h1>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="final-score">0</span>
+                        <span class="score-total">/5</span>
+                    </div>
+                </div>
+                <p id="result-message">Gratulacje!</p>
+                <div id="answers-summary" class="answers-summary">
+                    <!-- Podsumowanie odpowiedzi -->
+                </div>
+                <button id="restart-btn" class="btn btn-primary">Spróbuj ponownie</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
