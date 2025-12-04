@@ -3,8 +3,8 @@ const quizData = [
     {
         "question": "Czym jest misja IGNIS?",
         "A": "Polską misją technologiczno-naukową na ISS",
-        "B": "Teleskopem kosmicznym",
-        "C": "Robotycznym łazikiem marsjańskim",
+        "B": "Misją zainstalowania teleskopu kosmicznego",
+        "C": "Misją z wykorzystaniem robotycznego łazika marsjańskiego",
         "D": "Misją załogową na Marsa",
         "correct": "A",
         "tag": "IGNIS" 
@@ -82,7 +82,7 @@ const quizData = [
         "tag": "kosmos"
     },
     {
-        "question": "Jak nazywa się pierwsza sztuczna satelita Ziemi?",
+        "question": "Jak nazywa się pierwszy sztuczny satelita Ziemi?",
         "A": "Apollo 11",
         "B": "Hubble",
         "C": "Voyager 1",
@@ -226,7 +226,7 @@ const quizData = [
         "tag": "AI"
     },
     {
-        "question": "Która z poniższych dziedzin najbardziej korzysta z AI?",
+        "question": "Która z poniższych dziedzin korzysta z AI?",
         "A": "Astronomia",
         "B": "Medycyna",
         "C": "Finanse",
