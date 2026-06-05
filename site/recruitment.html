@@ -12,7 +12,6 @@
 	<header class="site-header">
 		<div class="site-shell">
 			<a class="brand" href="index.html" aria-label="DeepDive UG - strona główna">
-				<img src="../assets/media/DeepDive-logo-ocean_blue&off-black_transparent-12.2023.png" class="brand-full brand-full--light" alt="DeepDive UG">
 				<img src="../assets/media/DeepDive-logo-white.png" class="brand-full brand-full--dark" alt="DeepDive UG">
 				<img src="../assets/media/wieloryb logo.png" class="brand-mark-img" alt="" aria-hidden="true">
 				<span>
@@ -20,14 +19,15 @@
 					<small>Koło naukowe analizy danych i AI</small>
 				</span>
 			</a>
+			<button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Pokaż menu">
+				<span class="nav-toggle-icon">☰</span>
+			</button>
 			<nav class="nav" aria-label="Główna nawigacja">
 				<a href="index.html">Start</a>
 				<a href="about.html">O kole</a>
 				<a href="projects.html">Projekty</a>
 				<a href="recruitment.html" aria-current="page">Rekrutacja</a>
-				<button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Przełącz motyw">
-					<img class="theme-icon" data-theme-icon src="https://icons.getbootstrap.com/assets/icons/moon-fill.svg" alt="" aria-hidden="true">
-				</button>
+				
 			</nav>
 		</div>
 	</header>
@@ -53,7 +53,7 @@
 				<div class="timeline">
 					<div class="timeline-item">
 						<h3>1. Napisz do nas</h3>
-						<p>Wyślij wiadomość na adres <a href="mailto:deepdive@studms.ug.edu.pl">deepdive@studms.ug.edu.pl</a>.</p>
+						<p>Wyślij wiadomość na adres <a href="mailto:DeepDiveUG@proton.me">DeepDiveUG@proton.me</a>.</p>
 					</div>
 					<div class="timeline-item">
 						<h3>2. Opowiedz o swoich zainteresowaniach</h3>
@@ -84,14 +84,38 @@
 		<div class="contact-strip">
 			<div>
 				<strong>Kontakt rekrutacyjny</strong>
-				<span class="muted"><a href="mailto:deepdive@studms.ug.edu.pl">deepdive@studms.ug.edu.pl</a></span>
+				<span class="muted"><a href="mailto:DeepDiveUG@proton.me">DeepDiveUG@proton.me</a></span>
 			</div>
-			<a class="button button-primary" href="mailto:deepdive@studms.ug.edu.pl">Wyślij wiadomość</a>
+			<a class="button button-primary" href="mailto:DeepDiveUG@proton.me">Wyślij wiadomość</a>
 		</div>
 	</main>
 
 	<footer class="site-shell site-footer">
-		<p>Koło Naukowe DeepDive UG</p>
+		<div class="footer-inner">
+			<div class="footer-brand">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/0/02/SVG_logo.svg" alt="DeepDive logo" class="footer-logo">
+				<div>
+					<strong>DeepDive UG</strong>
+					<div class="muted">Koło naukowe dla osób zainteresowanych analizą danych i sztuczną inteligencją.</div>
+				</div>
+			</div>
+
+			<div class="social-links">
+				<a href="https://www.facebook.com/DeepDiveUG" target="_blank" rel="noopener" aria-label="DeepDive Facebook">
+					<img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/facebook.svg" alt="Facebook">
+				</a>
+				<a href="https://www.instagram.com/deepdive.ug" target="_blank" rel="noopener" aria-label="DeepDive Instagram">
+					<img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg" alt="Instagram">
+				</a>
+				<a href="https://www.linkedin.com/company/96022028" target="_blank" rel="noopener" aria-label="DeepDive LinkedIn">
+					<img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/linkedin.svg" alt="LinkedIn">
+				</a>
+				<a href="mailto:DeepDiveUG@proton.me" aria-label="Email DeepDive">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28envelope%29_font_awesome.svg" alt="Email">
+				</a>
+			</div>
+		</div>
+		<p class="footer-note">© DeepDive UG</p>
 	</footer>
 	<script src="../assets/vendor/three.r134.min.js"></script>
 	<script src="../assets/vendor/vanta.net.min.js"></script>

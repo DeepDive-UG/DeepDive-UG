@@ -1,25 +1,9 @@
 @import url("colors.css");
 
 :root {
-	color-scheme: light;
-	--bg: var(--snow);
-	--surface: rgba(249, 244, 245, 0.86);
-	--surface-alt: rgba(60, 81, 255, 0.08);
-	--text: var(--deep-navy);
-	--muted: var(--grey);
-	--primary: var(--full-spectrum-blue);
-	--primary-dark: var(--deep-navy);
-	--accent: var(--deep-purple);
-	--border: rgba(17, 19, 68, 0.12);
-	--shadow: 0 18px 50px rgba(17, 19, 68, 0.12);
-	--radius: 24px;
-	--radius-sm: 16px;
-}
-
-:root[data-theme="dark"] {
 	color-scheme: dark;
 	--bg: #0b0d1a;
-	--surface: rgba(17, 19, 68, 0.96);
+	--surface: rgb(0 0 0 / 61%);
 	--surface-alt: rgba(60, 81, 255, 0.18);
 	--text: var(--snow);
 	--muted: rgba(249, 244, 245, 0.92);
@@ -28,6 +12,8 @@
 	--accent: var(--deep-purple);
 	--border: rgba(249, 244, 245, 0.18);
 	--shadow: 0 18px 50px rgba(0, 0, 0, 0.36);
+	--radius: 24px;
+	--radius-sm: 16px;
 }
 
 * {
@@ -121,8 +107,7 @@ a {
 }
 
 .brand-mark-img {
-	width: 44px;
-	height: 44px;
+	height: 36px;
 	display: block;
 	border-radius: 12px;
 	box-shadow: var(--shadow);
@@ -138,18 +123,11 @@ a {
 	.brand-mark-img { display: none; }
 }
 
-/* Light / Dark variants for full logotype */
-.brand-full--light,
-.brand-full--dark {
-	display: none;
-}
+.brand-full--light { display: none; }
+.brand-full--dark { display: none; }
 
 @media (min-width: 640px) {
-	.brand-full--light { display: block; }
-	.brand-full--dark { display: none; }
-
-	:root[data-theme="dark"] .brand-full--light { display: none; }
-	:root[data-theme="dark"] .brand-full--dark { display: block; }
+	.brand-full--dark { display: block; }
 }
 
 .brand small {
@@ -164,6 +142,27 @@ a {
 	gap: 10px;
 	align-items: center;
 	min-height: 46px;
+}
+
+#start {
+  scroll-margin-top: 100px;
+}
+
+.nav-toggle {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	border: 1px solid transparent;
+	color: var(--muted);
+	font-size: 1.25rem;
+	padding: 6px 10px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.nav-toggle:focus {
+	outline: 2px solid rgba(255,255,255,0.06);
 }
 
 .nav a {
@@ -185,50 +184,7 @@ a {
 	outline: none;
 }
 
-.theme-toggle {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 42px;
-	padding: 0 14px;
-	border: 1px solid var(--border);
-	border-radius: 999px;
-	background: var(--surface);
-	color: var(--text);
-	font: inherit;
-	font-weight: 700;
-	cursor: pointer;
-	box-shadow: none;
-	transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-}
-
-.nav .theme-toggle {
-	min-height: 46px;
-}
-
-.theme-toggle:hover,
-.theme-toggle:focus-visible {
-	transform: translateY(-1px);
-	outline: none;
-	background: var(--surface-alt);
-}
-
-/* Improve icon and text contrast in dark mode */
-:root[data-theme="dark"] {
-	/* make borders and muted text slightly stronger for legibility */
-	--muted: rgba(249, 244, 245, 0.92);
-	--border: rgba(249, 244, 245, 0.18);
-}
-
-:root[data-theme="dark"] .theme-toggle {
-	background: rgba(255, 255, 255, 0.03);
-	border-color: var(--border);
-}
-
-:root[data-theme="dark"] .theme-icon img,
-:root[data-theme="dark"] .theme-toggle img {
-	filter: invert(1) brightness(1.6) saturate(1.2);
-}
+/* Theme toggle removed intentionally - site is dark-only */
 
 /* Ensure inline SVG icons follow currentColor when possible */
 svg { color: inherit; }
@@ -302,7 +258,7 @@ svg { color: inherit; }
 	padding: 0 18px;
 	border-radius: 999px;
 	font-weight: 700;
-	border: 1px solid transparent;
+	/* border: 1px solid transparent; */
 	transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
@@ -319,9 +275,9 @@ svg { color: inherit; }
 }
 
 .button-secondary {
-	background: rgba(82, 21, 78, 0.08);
-	border-color: rgba(82, 21, 78, 0.16);
-	color: var(--deep-purple);
+	background: rgba(82, 21, 78, 0.25);
+	border: 1px solid rgba(82, 21, 78, 0.52);
+	color: var(--snow)
 }
 
 .section-grid {
@@ -349,7 +305,7 @@ svg { color: inherit; }
 
 .section-title {
 	display: flex;
-	align-items: flex-end;
+	align-items: baseline;
 	justify-content: space-between;
 	gap: 16px;
 	margin-bottom: 18px;
@@ -433,23 +389,56 @@ svg { color: inherit; }
 	font-size: 1.1rem;
 }
 
-.theme-icon {
-	display: inline-block;
-	min-width: 1.25rem;
-	text-align: center;
-}
-
-.theme-icon img {
-	display: block;
-	width: 1.15rem;
-	height: 1.15rem;
-	object-fit: contain;
-}
+/* theme icon removed */
 
 .site-footer {
-	padding: 8px 0 36px;
+	padding: 36px 0 36px;
 	color: var(--muted);
 	font-size: 0.95rem;
+	background: var(--surface);
+	border-top: 1px solid rgba(255,255,255,0.06);
+	backdrop-filter: blur(8px);
+	width: 100%;	
+}
+
+.footer-inner {
+	width: min(1120px, calc(100% - 32px));
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.footer-brand {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.footer-logo {
+	width: 40px;
+	height: auto;
+	display: block;
+}
+
+.social-links {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+
+.social-links a img {
+	width: 22px;
+	height: 22px;
+	display: block;
+	filter: invert(1) brightness(1.6) saturate(1.1);
+}
+
+.footer-note {
+	text-align: center;
+	margin-top: 12px;
+	color: var(--muted);
 }
 
 	.muted {
@@ -460,6 +449,7 @@ svg { color: inherit; }
 	.site-header .site-shell {
 		flex-direction: column;
 		align-items: flex-start;
+		justify-content: space-between;
 	}
 
 	.hero {
@@ -477,17 +467,40 @@ svg { color: inherit; }
 	}
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
 	.site-shell {
 		width: min(100% - 20px, 1120px);
 	}
 
-	.nav {
+	.header-top {
+		display: flex;
+		justify-content: space-between;
 		width: 100%;
 	}
 
-	.theme-toggle {
+	.nav {
 		width: 100%;
+		display: none;
+		flex-direction: column;
+		gap: 6px;
+		padding: 12px 0;
+		background: transparent;
+	}
+
+	.nav.open {
+		display: flex;
+	}
+
+	.nav a {
+		width: 100%;
+		padding: 10px 14px;
+		border-radius: 8px;
+		background: transparent;
+	}
+
+	.nav-toggle {
+		display: inline-flex;
+		margin-left: 8px;
 	}
 
 	.hero h1 {

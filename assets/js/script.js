@@ -1,55 +1,4 @@
-(function () {
-	const storageKey = "deepdive-theme";
-	const root = document.documentElement;
-	const toggleButtons = document.querySelectorAll("[data-theme-toggle]");
-	const sunIcon = "https://icons.getbootstrap.com/assets/icons/sun-fill.svg";
-	const moonIcon = "https://icons.getbootstrap.com/assets/icons/moon-fill.svg";
-
-	if (!toggleButtons.length) {
-		return;
-	}
-
-	const getSystemTheme = () => (globalThis.matchMedia?.("(prefers-color-scheme: dark)")?.matches ? "dark" : "light");
-
-	const setTheme = (theme, persist = true) => {
-		const nextTheme = theme === "dark" ? "dark" : "light";
-		root.dataset.theme = nextTheme;
-
-		toggleButtons.forEach((button) => {
-			const isDark = nextTheme === "dark";
-			button.setAttribute("aria-pressed", String(isDark));
-			button.setAttribute("aria-label", isDark ? "Przełącz na tryb jasny" : "Przełącz na tryb ciemny");
-			button.setAttribute("title", isDark ? "Przełącz na tryb jasny" : "Przełącz na tryb ciemny");
-			const icon = button.querySelector("[data-theme-icon]");
-			if (icon) {
-				icon.setAttribute("src", isDark ? sunIcon : moonIcon);
-			}
-		});
-
-		if (persist) {
-			globalThis.localStorage?.setItem(storageKey, nextTheme);
-		}
-	};
-
-	const savedTheme = globalThis.localStorage?.getItem(storageKey);
-	setTheme(savedTheme || getSystemTheme(), false);
-
-	toggleButtons.forEach((button) => {
-		button.addEventListener("click", () => {
-			const currentTheme = root.dataset.theme === "dark" ? "dark" : "light";
-			setTheme(currentTheme === "dark" ? "light" : "dark");
-		});
-	});
-
-	if (globalThis.matchMedia) {
-		const mediaQuery = globalThis.matchMedia("(prefers-color-scheme: dark)");
-		mediaQuery.addEventListener?.("change", () => {
-			if (!globalThis.localStorage?.getItem(storageKey)) {
-				setTheme(getSystemTheme(), false);
-			}
-		});
-	}
-})();
+// Theme toggle removed: site forced to dark-only.
 
 // Active nav highlighting for anchor sections
 (function () {
@@ -91,6 +40,30 @@
 		minWidth: 200.0,
 		scale: 1.0,
 		scaleMobile: 1.0,
-		color: 0xc63fff
+		color: 0x52154e,
+		backgroundColor: 0xa0220
+
+	});
+})();
+
+// Mobile nav toggle for small screens
+(function () {
+	const toggle = document.querySelector('[data-nav-toggle]');
+	const nav = document.querySelector('.nav');
+	if (!toggle || !nav) return;
+
+	toggle.addEventListener('click', () => {
+		const opened = nav.classList.toggle('open');
+		toggle.setAttribute('aria-expanded', String(opened));
+	});
+
+	// Close nav when a link is clicked (useful for single-page anchors)
+	nav.querySelectorAll('a').forEach((a) => {
+		a.addEventListener('click', () => {
+			if (nav.classList.contains('open')) {
+				nav.classList.remove('open');
+				toggle.setAttribute('aria-expanded', 'false');
+			}
+		});
 	});
 })();
