@@ -112,11 +112,8 @@ a {
 	border-radius: 12px;
 	box-shadow: var(--shadow);
 	object-fit: cover;
+	display: none;
 }
-
-/* Responsive: show full logotype on larger screens, mark on small screens */
-.brand-full { display: none; }
-.brand-mark-img { display: block; }
 
 @media (min-width: 640px) {
 	.brand-full { display: block; }
@@ -124,7 +121,6 @@ a {
 }
 
 .brand-full--light { display: none; }
-.brand-full--dark { display: none; }
 
 @media (min-width: 640px) {
 	.brand-full--dark { display: block; }
@@ -184,9 +180,6 @@ a {
 	outline: none;
 }
 
-/* Theme toggle removed intentionally - site is dark-only */
-
-/* Ensure inline SVG icons follow currentColor when possible */
 svg { color: inherit; }
 
 .hero,
@@ -258,7 +251,6 @@ svg { color: inherit; }
 	padding: 0 18px;
 	border-radius: 999px;
 	font-weight: 700;
-	/* border: 1px solid transparent; */
 	transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
@@ -510,5 +502,11 @@ svg { color: inherit; }
 	.content-section,
 	.contact-strip {
 		padding: 22px;
+	}
+
+	@media (max-width: 900px) {
+    .brand > span {
+		display: none;
+	}
 	}
 }
